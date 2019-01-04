@@ -1,0 +1,49 @@
+<section class="hero is-dark is-medium">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title is-spaced">
+        Classic PS1 game reddit 
+      </h1>
+      <h2 class="subtitle is-spaced">
+        Simple reddit like App which uses click events, data binding and a seperate model.ts to keep the component lightweight
+      </h2>
+      <h2 class="subtitle is-spaced">
+      </h2>
+      
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- INDIVIDUAL GAMES -->
+  <section class="hero is-warning is-bold">
+    <div class="hero-body">
+      <div class="container">
+        <div class="field">
+          <p class="control has-icons-left has-icons-right">
+            <input class="input" placeholder="Enter name of game"  #newtitle>
+          </p>
+        </div>
+        <div class="field">
+          <p class="control">
+            <button (click)="addGame(newtitle)" class="button is-dark is-bold">Add game</button>
+          </p>
+        </div>
+        <hr>
+        <div class="columns-is-multiline"></div>
+        <app-game
+        *ngFor="let foobar of sortedGames()"
+        [game]="foobar"></app-game>
+
+      
+
+
+      
+
+
+      </div>
+    </div>
+  </section>

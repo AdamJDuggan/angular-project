@@ -1,0 +1,103 @@
+<section class="hero is-light is-medium">
+    <div class="hero-body">
+    <div class="container">
+    <h1 class="title is-spaced">
+    <strong class="has-text-danger">Template driven </strong>  
+    and 
+    <strong class="has-text-primary"> Reactive </strong> Forms  
+    </h1>
+    <h2 class="subtitle is-spaced">
+    Featuring all of Angular's built in form building features (upto start of lecture 179)
+    </h2>
+    <h2 class="subtitle is-spaced">
+    </h2>
+    
+    </div>
+    </div>
+    </section>
+
+
+
+<section class="hero is-danger is-small">
+<div class="hero-body">
+<div class="container">
+<h1 class="title is-spaced">
+Template driven forms  
+</h1>
+<h2 class="subtitle is-spaced">
+Featuring all of Angular's built in form building features 
+</h2>
+<h2 class="subtitle is-spaced">
+</h2>
+
+</div>
+</div>
+</section>
+
+<div class="section">
+<div class="container">
+  <!-- This is how to get access to JS object of the form -->
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+<div class="field">
+<label for="username" class="label">Name</label>
+<div class="control">
+<input 
+class="input" type="text" id="username" placeholder="Text input" ngModel name="username">
+<button id="userSuggest" class="button is-danger">Suggest a username</button>
+</div>
+</div>
+
+
+<div class="field">
+<label for="email" class="label">Email</label>
+<div class="control has-icons-left has-icons-right">
+<input id="email" class="input" type="email" placeholder="Email input" ngModel name="email ">
+<span class="icon is-small is-left">
+<i class="fas fa-envelope"></i>
+</span>
+<span class="icon is-small is-right">
+<!-- <i class="fas fa-exclamation-triangle"></i> -->
+</span>
+</div>
+</div>
+
+<div class="field">
+  <label for="secret question" class="label">Secret Question</label>
+  <div class="control">
+    <div class="select">
+      <select id="secret" ngModel name="secret">
+        <option value="pet">Your first pet?</option>
+        <option value="teacher">Your first teacher?</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="field is-grouped">
+<div class="control">
+<button type="submit" class="button is-danger">Submit</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+
+
+<!-- REACTIVE SECTION BEGINS -->
+<section class="hero is-primary is-small">
+  <div class="hero-body">
+  <div class="container">
+  <h1 class="title is-spaced">
+  Reactive Forms  
+  </h1>
+  <h2 class="subtitle is-spaced">
+  Featuring all of Angular's built in form building features 
+  </h2>
+  <h2 class="subtitle is-spaced">
+  </h2>
+  
+  </div>
+  </div>
+  </section>
+
+
