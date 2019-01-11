@@ -1,0 +1,62 @@
+<!-- REACTIVE SECTION BEGINS -->
+<section class="hero is-primary is-small">
+  <div class="hero-body">
+  <div class="container">
+  <h1 class="title is-spaced">
+  Reactive Forms  
+  </h1>
+  <h2 class="subtitle is-spaced">
+  Reactive validation, grouping controls, 
+  </h2>
+  <h2 class="subtitle is-spaced">
+  </h2>
+  
+  </div>
+  </div>
+  </section>
+
+  <div class="section">
+      <div class="container">
+      <form [formGroup]="signupForm" (ngSubmit)= "onReactiveSubmit()">
+      <div formGroupName="userData">
+      <div class="field">
+      <label for="username" class="label">Name</label>
+      <div class="control">
+      <input 
+      class="input" type="text" id="username" placeholder="Username" 
+      formControlName="username">
+      </div>
+      </div>
+      <span 
+      *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched" 
+      class="help is-primary">Please enter a valid username</span>
+      
+      <div class="field">
+      <label for="email" class="label">Email</label>
+      <div class="control has-icons-left has-icons-right">
+      <input id="email" class="input" type="email" placeholder="Email input"
+      formControlName="email">
+      <span class="icon is-small is-left">
+      <i class="fas fa-envelope"></i>
+      </span>
+      <span class="icon is-small is-right">
+      </span>
+      </div>
+      </div>
+      <span 
+      *ngIf="!signupForm.get('userData.email').valid && signupForm.get('userData.email').touched" 
+      class="help is-primary">Please enter a valid email address</span>
+      </div>
+      <div class="control" id="radios">
+        <label class="radio" *ngFor="let gender of genders">
+          <input type="radio" formControlName="gender" [value]="gender">{{gender}}</label>
+      </div>
+      
+      <div class="field is-grouped">
+      <div class="control">
+      <button type="submit" class="button is-primary">Submit</button>
+      </div>
+      </div>
+      </form>
+      </div>
+      </div>  

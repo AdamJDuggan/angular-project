@@ -1,0 +1,7 @@
+#userSuggest {margin-top: 10px;}
+#radios {margin-bottom: 10px;}
+.textarea{margin-bottom: 10px;}
+
+input.ng-invalid.ng-touched {border: 1px solid red;}
+
+.card{padding: 15px; width: 300px;}

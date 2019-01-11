@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { NgForm, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-forms',
@@ -8,14 +8,6 @@ import { NgForm } from '@angular/forms';
 })
 export class FormsComponent implements OnInit {
 
-  suggestedUserNames(){
-    const suggestedName = 'SuperUser';
-  }
-
-  onSubmit(form: NgForm){
-    console.log(form); 
-  }
- 
   constructor() { }
 
   ngOnInit() {
