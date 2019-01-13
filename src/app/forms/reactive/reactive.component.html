@@ -6,7 +6,7 @@
   Reactive Forms  
   </h1>
   <h2 class="subtitle is-spaced">
-  Reactive validation, grouping controls, 
+  Reactive validation, grouping controls, custom async validators and   
   </h2>
   <h2 class="subtitle is-spaced">
   </h2>
@@ -29,7 +29,13 @@
       </div>
       <span 
       *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched" 
-      class="help is-primary">Please enter a valid username</span>
+      class="help is-primary">
+
+      <span *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']">This name is invalid</span>
+      
+      <span *ngIf="signupForm.get('userData.username').errors['required']">A username is required</span>
+
+      </span>
       
       <div class="field">
       <label for="email" class="label">Email</label>
@@ -51,7 +57,14 @@
         <label class="radio" *ngFor="let gender of genders">
           <input type="radio" formControlName="gender" [value]="gender">{{gender}}</label>
       </div>
-      
+      <div class="field" formArrayName="hobbies">
+        <label for="hobbies" class="label">Hobbies:</label>
+        <div class="form-group" *ngFor="let hobbieControl of signupForm.get('hobbies').controls; let i = index">
+          <input type="text" id="hobbieInput" class="input" [formControlName]="i">
+        </div>
+        <button type="button" class="button is-primary" (click)="onAddHobbie()">Add hobbie</button>      
+      </div>
+
       <div class="field is-grouped">
       <div class="control">
       <button type="submit" class="button is-primary">Submit</button>
